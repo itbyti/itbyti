@@ -1,0 +1,186 @@
+baseURL: https://itbyti.ir/
+languageCode: "fa"
+defaultContentLanguage: "fa"
+title: "اخبار آی تی | آی تی بای تی"
+theme: "PaperMod"
+paginate: 10
+copyright: نوشته‌های این وبسایت با پروانه [کریتیو کامنز اتریبیوشن ۴.۰ اینترنشنال](https://creativecommons.org/licenses/by/4.0/)  منتشر شده‌اند.
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+publishDir: "docs"
+
+# googleAnalytics:
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: آی تی بای تی
+  description: "آخرین اخبار آی تی | آی تی بای تی."
+  keywords: ["news", "information technology", "artificial intelligence", "IT"]
+  # author: "ITbyti Admin"
+  # author: ["Me", "You"] # multiple authors
+  images: ["opengraph/avatar.jpg"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: true
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    disableFingerprinting: true
+    favicon: ""
+    favicon16x16: ""
+    favicon32x32: ""
+    apple_touch_icon: ""
+    safari_pinned_tab: ""
+
+  label:
+    text: "خانه"
+    icon: #/apple-touch-icon.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # home-info mode
+  homeInfoParams:
+    Title: سلام به آی تی بای تی خوش آمدید
+    Content: |
+      تو این وبسایت قراره اخبار و آموزش های تکنولوژی رو با هم بررسی کنیم و کلی چیز جدید یاد بگیریم
+      پس با آی تی بای تی همراه باشید و به دوستانتون هم معرفی کنید ☺️
+
+      🔋 https://itbyti.ir : آی تی بای تی
+
+  socialIcons:
+    - name: rss
+      url: https://itbyti.ir/index.xml
+    - name: telegram
+      url: "https://t.me/itbyti"
+    - name: eitaa
+      url: "https://eitaa.com/itbyti"
+    - name: github
+      url: "https://github.com/itbyti"
+    - name: site
+      url: https://itbyti.ir
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "0UgRGp760ZWT9RdluFfKbknSLmu2SOzDh5TJvTHwKjE"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+  #   yandex:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: https://github.com/itbyti/itbyti/tree/publish_site/content
+    Text: "پیشنهاد اصلاح متن" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+
+permalinks:
+  # https://gohugo.io/content-management/urls/
+  posts: "/:filename/"
+
+menu:
+  main:
+    - identifier: about
+      name: درباره آی تی بای تی
+      url: /about
+      weight: 90
+    - identifier: tags
+      name: تگ‌ها
+      url: /tags/
+      weight: 20
+    # - identifier: archives
+    #   name: آرشیو
+    #   url: /archives/
+    #   weight: 30
+    - identifier: search
+      name: جستجو
+      url: /search/
+      weight: 40
+    - identifier: news
+      name: آخرین اخبار
+      url: /news/
+      weight: 10
+    # - identifier: more
+    #   name: بیشتر
+    #   url: /more/
+    #   weight: 100
+
+languages:
+  fa:
+    languageName: "farsi"
+    weight: 1
+    languagedirection: rtl
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
